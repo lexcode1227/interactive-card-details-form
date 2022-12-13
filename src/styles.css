@@ -75,26 +75,26 @@ main {
     top: 115px;
     left: 15px;
 }
-#cardDetails{
-    display: grid;
+#cardDetail{
+    display: flex;
     justify-content: center;
 }
-.cardContainer {
+.cardDetails {
     max-width: 400px;
     height: auto;
-    padding: 0 20px;
+    padding: 60px 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
-.cardContainer input {
+.cardDetails input {
     padding: 8px;
     /* border-radius: 5px;
     border-width: 1px;
     border-color: rgb(220, 202, 202); */
 }
 .verticalSpace {
-    padding: 20px 0 0 0;
+    padding: 20px 0 5px 0;
 }
 #cardDetails-date{
     display: flex;
@@ -113,7 +113,7 @@ main {
 #cardDetails-date--cvc {
     width: 50%;
 }
-#btn {
+.btn {
     font-size: 18px;
     margin: 15px 0 0 0;
     padding: 13px;
@@ -123,6 +123,20 @@ main {
     background-color: var(--mainColor);
     color: white;
 }
+/* Siguiente paso, despúes de dar click*/
+.textCenter {
+    align-items: center;
+}
+.h1Text {
+    font-size: 24px;
+    letter-spacing: 5px;
+    padding-bottom: 5px;
+}
+.h2Text {
+    font-size: 16px;
+    padding-bottom: 5px;
+    color: hsl(279, 6%, 55%);
+}
 @media screen and (min-width: 768px) {
     #imageContainer-front {
         left: 100px;
@@ -130,12 +144,11 @@ main {
     #imageContainer-back {
         right: 100px;
     }
-    #cardDetails{
+    #cardDetail{
         display: flex;
         justify-content: center;
-        padding: 60px 0 0 0;
     }
-    .cardContainer {
+    .cardDetails {
         max-width: 500px;
         padding: 80px 20px;
     }
@@ -150,7 +163,7 @@ main {
         width: 30%;
         height: 100vh;
     }
-    #cardDetails{
+    #cardDetail{
         width: 70%;
     }
     #imageContainer-front {
