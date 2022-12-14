@@ -89,14 +89,11 @@ main {
 }
 .cardDetails input {
     padding: 8px;
-    /* border-radius: 5px;
-    border-width: 1px;
-    border-color: rgb(220, 202, 202); */
 }
 .verticalSpace {
     padding: 20px 0 5px 0;
 }
-#cardDetails-date{
+.cardDetails-dates{
     display: flex;
     gap: 15px;
     justify-content: space-between;
@@ -123,6 +120,10 @@ main {
     background-color: var(--mainColor);
     color: white;
 }
+/* Navigation */
+.inactive {
+    display: none;
+  }
 /* Siguiente paso, despúes de dar click*/
 .textCenter {
     align-items: center;

@@ -12,6 +12,12 @@ const mmOutput = document.querySelector("#mmCard")
 const yyOutput = document.querySelector("#yyCard")
 const cvcOutput = document.querySelector("#cvc")
 
+const errorCardName = document.querySelector("#cardDetails-name--error")
+const errorCardNumber = document.querySelector("#cardDetails-number--error")
+const errorCardMm = document.querySelector("#cardDetails-datemm--error")
+const errorCardYy = document.querySelector("#cardDetails-dateyy--error")
+const errorCardCvc = document.querySelector("#cardDetails-datecvc--error")
+
 nameInput.addEventListener("input", ()=>{
     nameOutput.innerText = nameInput.value 
 })
@@ -28,37 +34,45 @@ cvcInput.addEventListener("input", ()=>{
     cvcOutput.innerText = cvcInput.value 
 })
 btn.addEventListener("click", ()=>{
-    const cardDetail = document.querySelector("#cardDetail")
-    cardDetail.innerHTML = ""
-    const cardDETAILS = document.createElement("div")
-    const img = document.createElement("object")
-    img.data = "/interactive-card-details-form/assets/icon-complete.svg"
-    img.setAttribute("width", "100")
-    img.setAttribute("height", "100")
-    const h1 = document.createElement("h1")
-    const h1Text = document.createTextNode("THANK YOU!")
-    const h2 = document.createElement("h2")
-    const h2Text = document.createTextNode("We’ve added your card details")
-    const button = document.createElement("button")
-    const buttonText = document.createTextNode("Continue")
-
-    button.appendChild(buttonText)
-    button.classList.add("btn")
-    button.setAttribute("id", "btnFin")
-    h2.appendChild(h2Text)
-    h2.classList.add("h2Text")
-    h1.appendChild(h1Text)
-    h1.classList.add("h1Text")
-
-    cardDETAILS.append(img,h1,h2,button)
-    cardDETAILS.classList.add("cardDetails", "textCenter")
-    cardDetail.append(cardDETAILS)
-    cardDetail.setAttribute("id", "cardDetail")
-    const btnFin = document.querySelector("#btnFin")
-    btnFin.addEventListener("click", ()=>{
-    location.reload()})
+    let ok = true
+    if(nameInput.value.length < 2 || nameInput.value.length > 25 ){
+        errorCardName.innerText = "Card name invalid"
+        console.log("Card name invalid")
+        return ok = false
+    }
+    if (cardInput.value.length == 16){
+        ok = true
+    } else {
+        errorCardNumber.innerText = "Card number invalid"
+        console.log("Card number invalid");
+        ok = false
+    }
+    if (cvcInput.value.length == 3){
+        ok = true
+    } else {
+        errorCardCvc.innerText = "Card cvc invalid"
+        console.log("Card cvc invalid");
+        ok = false
+    }  
+    if(mmInput.value < 1 || mmInput.value > 12) {
+        errorCardMm.innerText = "Card month invalid"
+        console.log("Card month invalid");
+        ok = false
+    }
+    if(yyInput.value < 22){
+        errorCardYy.innerText = "Card year invalid"
+        console.log("Card year invalid");
+        ok = false
+    }
+      
+    if(ok == true){
+        const cardDetails = document.querySelector("#cardDETAILS")
+        const thankYou = document.querySelector("#thankYou")
+        cardDetails.classList.add("inactive")
+        thankYou.classList.remove("inactive")
+    }
 })
-
-
-
-
+const btnFin = document.querySelector("#btnFin")
+btnFin.addEventListener("click", ()=>{
+    location.reload()
+    })

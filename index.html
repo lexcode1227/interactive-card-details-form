@@ -23,21 +23,37 @@
         </div>
     </div>
     <div id="cardDetail">
-        <div class="cardDetails">
+        <div id="cardDETAILS" class="cardDetails">
             <label class="verticalSpace text-m" for="form" >CARDHOLDER NAME</label>
             <input id="cardDetails-name" type="text" placeholder="e.g. Alexander Agustin">
+            <p id="cardDetails-name--error" class="text-s"></p>
             <label class="verticalSpace text-m" for="form">CARD NUMBER</label>
             <input id="cardDetails-number" type="text" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
+            <p id="cardDetails-number--error" class="text-s"></p>
             <div class="verticalSpace expData">
                 <label class="text-m" for="form">EXP. DATE (MM/YY)</label>
                 <label class="text-m" for="form">CVC</label>
             </div>
-            <div id="cardDetails-date">
+            <div id="cardDetails-date" class="cardDetails-dates">
                 <input type="text" id="cardDetails-date--mm" placeholder="MM" maxlength="2">
+                <!-- <p id="cardDetails-datemm--error" class="text-s"></p> -->
                 <input type="text" id="cardDetails-date--yy" placeholder="YY" maxlength="2">
+                <!-- <p id="cardDetails-dateyy--error" class="text-s"></p> -->
                 <input type="text" id="cardDetails-date--cvc" placeholder="e.g. 123" maxlength="3">
+                <!-- <p id="cardDetails-datecvc--error" class="text-s"></p> -->
+            </div>
+            <div >
+                <p id="cardDetails-datemm--error" class="text-s"></p>
+                <p id="cardDetails-dateyy--error" class="text-s"></p>
+                <p id="cardDetails-datecvc--error" class="text-s"></p>
             </div>
             <button id="Btn" class="btn" type="button">Confirm</button>
+        </div>
+        <div id="thankYou" class="cardDetails textCenter inactive">
+            <object data="/interactive-card-details-form/assets/icon-complete.svg" width="80" height="80"></object>
+            <h1 class="h1Text">THANK YOU!</h1>
+            <h2 class="h2Text">We’ve added your card details</h2>
+            <button class="btn" id="btnFin">Continue</button>
         </div>
     </div>
     <script src="./public/index.js"></script>
