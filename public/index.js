@@ -39,9 +39,12 @@ btn.addEventListener("click", ()=>{
         errorCardName.innerText = "Card name invalid"
         console.log("Card name invalid")
         return ok = false
+    } else {
+        errorCardName.innerText = ""
     }
     if (cardInput.value.length == 16){
         ok = true
+        errorCardNumber.innerText = ""
     } else {
         errorCardNumber.innerText = "Card number invalid"
         console.log("Card number invalid");
@@ -49,6 +52,7 @@ btn.addEventListener("click", ()=>{
     }
     if (cvcInput.value.length == 3){
         ok = true
+        errorCardCvc.innerText = ""
     } else {
         errorCardCvc.innerText = "Card cvc invalid"
         console.log("Card cvc invalid");
@@ -58,11 +62,15 @@ btn.addEventListener("click", ()=>{
         errorCardMm.innerText = "Card month invalid"
         console.log("Card month invalid");
         ok = false
+    } else {
+        errorCardMm.innerText = ""
     }
     if(yyInput.value < 22){
         errorCardYy.innerText = "Card year invalid"
         console.log("Card year invalid");
         ok = false
+    } else {
+        errorCardYy.innerText = ""
     }
       
     if(ok == true){
