@@ -11,6 +11,7 @@ const cardOutput = document.querySelector("#numberCard")
 const mmOutput = document.querySelector("#mmCard")
 const yyOutput = document.querySelector("#yyCard")
 const cvcOutput = document.querySelector("#cvc")
+const year = new Date().getFullYear().toString().substr(-2)
 
 const errorCardName = document.querySelector("#cardDetails-name--error")
 const errorCardNumber = document.querySelector("#cardDetails-number--error")
@@ -65,7 +66,7 @@ btn.addEventListener("click", ()=>{
     } else {
         errorCardMm.innerText = ""
     }
-    if(yyInput.value < 22){
+    if(yyInput.value < year){
         errorCardYy.innerText = "Card year invalid"
         console.log("Card year invalid");
         ok = false
