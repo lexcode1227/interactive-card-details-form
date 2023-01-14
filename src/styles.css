@@ -166,37 +166,38 @@ main {
     }
     #cardDetail{
         width: 70%;
-        justify-content: flex-end;
+        justify-content: center;
+        margin-left: 100px;
     }
     #imageContainer-front {
-        top: 125px;
+        top: 200px;
         bottom: 0;
         left: 100px;
     }
     #imageContainer-back {
-        top: 300px;
+        top: 385px;
         left: 150px;
     }
 }
 @media screen and (min-width: 1440px){
     #imageContainer-front {
-        top: 190px;
         left: 275px;
     }
     #imageContainer-back {
-        top: 375px;
         left: 320px;
     }
     #cardDetail{
         width: 70%;
-        justify-content: center;
+        margin-left: 0;
     }
 }
 @media screen and (min-width: 1920px){
     #imageContainer-front {
-        left: 340px;
+        left: 440px;
+        top: 240px;
     }
     #imageContainer-back {
-        left: 395px;
+        left: 480px;
+        top: 425px;
     }
 }
