@@ -43,12 +43,14 @@ main {
 }
 .text-s {
     font-size: 10px;
+    letter-spacing: 3px;
 }
 .text-m {
     font-size: 12px;
 }
 .text-l {
     font-size: 18px;
+    letter-spacing: 3px;
 }
 #cvc {
     position: absolute;
